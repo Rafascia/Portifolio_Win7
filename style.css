@@ -581,23 +581,53 @@ html[data-theme="dark"] .btn { background: linear-gradient(180deg, #26384f, #1a2
 /* ===================== RESPONSIVO (@media) ===================== */
 @media (max-width: 760px) {
   body { overflow: auto; }
-  .desktop-icons { flex-direction: row; flex-wrap: wrap; gap: 8px; }
-  .window {
-    position: static !important; width: 94vw; margin: 12px auto;
-    animation: none;
+
+  /* o desktop vira um container de fluxo normal, com respiro embaixo pra barra de tarefas */
+  .desktop { height: auto; min-height: 100vh; padding: 10px 10px 60px; }
+  .desktop::before { position: fixed; } /* véu de tema cobre a tela toda */
+
+  /* ícones viram uma faixa organizada no topo, sem sobrepor nada */
+  .desktop-icons {
+    position: static; flex-direction: row; flex-wrap: wrap; justify-content: center;
+    gap: 10px; margin-bottom: 12px;
   }
-  .window:not(.hidden) { display: block; }
-  .window.maximized { height: auto; }
+  .desk-icon { width: 76px; }
+
+  /* janelas: cada uma ocupa a largura toda, empilhadas de forma limpa */
+  .window {
+    position: static !important; width: 100%; margin: 0 auto 14px;
+    height: auto !important; animation: none; display: block;
+    transform: none !important;
+  }
+  .window.hidden { display: none !important; }
+  .window.minimized { display: none !important; }
+  .window.maximized { height: auto; display: block; }
   .win-body { max-height: none; }
   .titlebar { cursor: default; }
-  .start-menu { flex-direction: column; width: 94vw; left: 3vw; }
-  .start-left { border-bottom: 1px solid rgba(120, 160, 200, 0.35); }
+  .resize-handle { display: none; } /* sem redimensionar no toque */
+
+  /* menu Iniciar em coluna, ocupando quase a largura */
+  .start-menu { flex-direction: column; width: 94vw; left: 3vw; max-height: 70vh; overflow-y: auto; }
+  .start-left { border-right: none; border-bottom: 1px solid rgba(120, 160, 200, 0.35); }
+
+  /* barra de tarefas: esconde a lista de janelas (navega pelo menu Iniciar) */
   .task-items { display: none; }
+  .show-desktop { display: none; }
+
   .skills-grid, .projects-grid { grid-template-columns: 1fr 1fr; }
+
+  /* projeto em destaque empilha imagem sobre texto */
+  .project-featured { flex-direction: column; }
+  .featured-thumb { flex: none; width: 100%; min-height: 110px; }
+
+  /* logon e boot ocupam a tela e funcionam no toque */
+  .logon-avatar { width: 110px; height: 110px; font-size: 40px; }
+  .logon-name { font-size: 22px; }
 }
 
 @media (max-width: 440px) {
   .skills-grid, .projects-grid { grid-template-columns: 1fr; }
   .start-btn { width: 48px; }
   .tray-clock { font-size: 10px; }
+  .desk-icon { width: 68px; font-size: 11px; }
 }

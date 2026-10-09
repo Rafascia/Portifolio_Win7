@@ -448,6 +448,8 @@
     setTimeout(() => {
       logon.classList.add("saindo");
       setTimeout(() => logon.classList.add("hidden"), 600);
+      // no celular, abre uma seção para a tela não ficar vazia
+      if (window.innerWidth <= 760) openWindow("sobre");
     }, 1200);
   }
   const logonEnter = document.getElementById("logon-enter");
