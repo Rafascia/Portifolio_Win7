@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio — Rafael De Filippo Machado</title>
+  <meta name="description" content="Portfólio profissional em estilo Windows 7" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===================== INICIALIZAÇÃO (BOOT) ===================== -->
+  <div id="boot" class="boot">
+    <!-- vídeo real da inicialização do Windows 7 (com som) -->
+    <video id="boot-video" class="boot-video" playsinline preload="auto">
+      <source src="boot.mp4" type="video/mp4" />
+    </video>
+    <!-- animação em CSS: usada como reserva caso o vídeo não carregue -->
+    <div class="boot-stage" id="boot-fallback" hidden>
+      <div class="boot-flag">
+        <span class="orb orb-r"></span>
+        <span class="orb orb-g"></span>
+        <span class="orb orb-b"></span>
+        <span class="orb orb-y"></span>
+      </div>
+      <p class="boot-text">Iniciando o Windows<span class="boot-dots"></span></p>
+      <p class="boot-copyright">© Microsoft Corporation</p>
+    </div>
+  </div>
+
+  <!-- ===================== TELA DE LOGON (BOAS-VINDAS) ===================== -->
+  <div id="logon" class="logon hidden">
+    <div class="logon-center">
+      <button class="logon-user" id="logon-enter" aria-label="Entrar">
+        <span class="logon-avatar">RF</span>
+      </button>
+      <h1 class="logon-name">Rafael De Filippo Machado</h1>
+      <p class="logon-hint" id="logon-typed"></p>
+      <p class="logon-sub">Clique no usuário para entrar</p>
+    </div>
+    <div class="logon-footer">
+      <span class="logon-flag" aria-hidden="true"></span>
+      <span>Windows 7 · Portfólio</span>
+    </div>
+    <div class="logon-welcome hidden" id="logon-welcome">
+      <span class="logon-spinner"></span>
+      <p>Bem-vindo</p>
+    </div>
+  </div>
+
+  <!-- ===================== ÁREA DE TRABALHO ===================== -->
+  <main id="desktop" class="desktop" aria-label="Área de trabalho">
+
+    <!-- Ícones do desktop -->
+    <ul class="desktop-icons" aria-label="Ícones da área de trabalho">
+      <li><button class="desk-icon" data-open="projetos">
+        <span class="ico ico-folder"></span><span>Projetos</span></button></li>
+      <li><button class="desk-icon" data-open="sobre">
+        <span class="ico ico-user"></span><span>Sobre mim</span></button></li>
+      <li><button class="desk-icon" data-open="contato">
+        <span class="ico ico-mail"></span><span>Contato</span></button></li>
+    </ul>
+
+    <!-- ========================= JANELAS ========================= -->
+
+    <!-- (A antiga janela "Início" foi substituída pela tela de boas-vindas/logon do Windows 7) -->
+
+    <!-- SOBRE -->
+    <section class="window hidden" id="win-sobre" data-win="sobre" style="--x:160px; --y:90px;">
+      <header class="titlebar">
+        <span class="tb-title"><span class="ico ico-note"></span> Sobre mim</span>
+        <span class="tb-buttons">
+          <button class="tb-btn" data-action="min" title="Minimizar">&#8211;</button>
+          <button class="tb-btn" data-action="max" title="Maximizar">&#9633;</button>
+          <button class="tb-btn tb-close" data-action="close" title="Fechar">&#10005;</button>
+        </span>
+      </header>
+      <div class="win-body">
+        <h2 class="panel-title reveal">Quem sou eu</h2>
+        <div class="about">
+          <p class="reveal">
+            Olá! Meu nome é <strong>Rafael De Filippo Machado</strong>. Estudo no
+            Colégio Cotemig, no curso técnico em Informática. Escolhi essa área
+            porque acredito que hoje tudo passa pela tecnologia e,
+            independentemente do caminho que eu seguir, esse conhecimento será
+            sempre útil. Fora isso, sinto grande prazer em entender como as
+            coisas funcionam por dentro, tanto no hardware quanto no software.
+          </p>
+          <p class="reveal">
+            Gosto de transformar ideias em algo que as pessoas consigam usar
+            com facilidade, e encaro cada projeto como uma chance de aprender
+            alguma coisa nova. Também gosto de estar perto das pessoas e de
+            lidar com elas no dia a dia, o que me ajuda a trabalhar em equipe.
+          </p>
+          <p class="reveal">
+            Longe das telas, sou apaixonado por música, principalmente rock e
+            metal, e pelo esporte: pratico judô, hoje como faixa marrom, o que
+            me ensinou disciplina e persistência. Acima de tudo, minha
+            prioridade na vida sempre será o bem-estar da minha família e amigos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section class="window hidden" id="win-habilidades" data-win="habilidades" style="--x:140px; --y:75px;">
+      <header class="titlebar">
+        <span class="tb-title"><span class="ico ico-gear"></span> Habilidades — Painel de Controle</span>
+        <span class="tb-buttons">
+          <button class="tb-btn" data-action="min" title="Minimizar">&#8211;</button>
+          <button class="tb-btn" data-action="max" title="Maximizar">&#9633;</button>
+          <button class="tb-btn tb-close" data-action="close" title="Fechar">&#10005;</button>
+        </span>
+      </header>
+      <div class="win-body">
+        <h2 class="panel-title reveal">Minhas habilidades</h2>
+        <div class="skills-grid">
+          <article class="skill-card reveal"><h3>HTML5</h3><div class="bar"><span style="--pct:85%"></span></div><small>Estrutura e semântica</small></article>
+          <article class="skill-card reveal"><h3>CSS3</h3><div class="bar"><span style="--pct:80%"></span></div><small>Layout, Flexbox e responsivo</small></article>
+          <article class="skill-card reveal"><h3>JavaScript</h3><div class="bar"><span style="--pct:70%"></span></div><small>Interatividade e lógica</small></article>
+          <article class="skill-card reveal"><h3>C#</h3><div class="bar"><span style="--pct:85%"></span></div><small>Programação e lógica</small></article>
+          <article class="skill-card reveal"><h3>C++</h3><div class="bar"><span style="--pct:80%"></span></div><small>Programação e lógica</small></article>
+          <article class="skill-card reveal"><h3>MySQL</h3><div class="bar"><span style="--pct:45%"></span></div><small>Banco de dados (básico)</small></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section class="window hidden" id="win-projetos" data-win="projetos" style="--x:110px; --y:65px;">
+      <header class="titlebar">
+        <span class="tb-title"><span class="ico ico-folder"></span> Projetos — Meus Documentos</span>
+        <span class="tb-buttons">
+          <button class="tb-btn" data-action="min" title="Minimizar">&#8211;</button>
+          <button class="tb-btn" data-action="max" title="Maximizar">&#9633;</button>
+          <button class="tb-btn tb-close" data-action="close" title="Fechar">&#10005;</button>
+        </span>
+      </header>
+      <div class="win-body">
+        <h2 class="panel-title reveal">Projetos</h2>
+        <p class="muted reveal">Alguns trabalhos que marcam a minha evolução até aqui. Clique para ver os detalhes.</p>
+        <div class="projects-toolbar reveal">
+          <a class="btn btn-github" href="https://github.com/Rafascia" target="_blank" rel="noopener">Ver tudo no GitHub</a>
+        </div>
+
+        <!-- projeto em destaque -->
+        <article class="project-featured reveal" tabindex="0"
+          data-title="Portfólio Windows 7"
+          data-desc="Este próprio portfólio: uma área de trabalho do Windows 7 recriada do zero no navegador, com janelas que abrem, arrastam, minimizam e fecham, menu Iniciar, barra de tarefas, modo claro/escuro que fica salvo e formulário de contato com validação. Foi onde mais apliquei o que aprendi de front-end."
+          data-tech="HTML, CSS, JavaScript">
+          <div class="featured-thumb"></div>
+          <div class="featured-info">
+            <span class="featured-tag">Projeto em destaque</span>
+            <h3>Portfólio Windows 7</h3>
+            <p>Uma área de trabalho do Windows 7 recriada no navegador, com janelas, menu Iniciar e tema claro/escuro. É o site que você está vendo agora.</p>
+            <span class="featured-tech">HTML · CSS · JavaScript</span>
+          </div>
+        </article>
+
+        <!-- demais projetos -->
+        <div class="projects-grid">
+          <article class="project-card reveal" tabindex="0"
+            data-title="Estudos em C#"
+            data-desc="Exercícios e pequenos programas feitos durante o curso técnico para praticar lógica de programação e os fundamentos da linguagem C#: estruturas de decisão, repetição, funções e orientação a objetos."
+            data-tech="C#">
+            <div class="thumb thumb-1"></div>
+            <h3>Estudos em C#</h3>
+            <p>Prática de lógica e fundamentos da linguagem no curso técnico.</p>
+          </article>
+          <article class="project-card reveal" tabindex="0"
+            data-title="Estudos em C++"
+            data-desc="Programas de aprendizado em C++ para entender a lógica mais próxima da máquina: entrada e saída de dados, vetores, laços e resolução de problemas propostos em aula."
+            data-tech="C++">
+            <div class="thumb thumb-2"></div>
+            <h3>Estudos em C++</h3>
+            <p>Resolução de problemas e lógica de programação em C++.</p>
+          </article>
+          <article class="project-card project-soon reveal">
+            <div class="thumb thumb-soon"></div>
+            <h3>Em breve</h3>
+            <p>Novos projetos a caminho. Acompanhe pelo meu GitHub.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="window hidden" id="win-contato" data-win="contato" style="--x:170px; --y:85px;">
+      <header class="titlebar">
+        <span class="tb-title"><span class="ico ico-mail"></span> Contato — Nova mensagem</span>
+        <span class="tb-buttons">
+          <button class="tb-btn" data-action="min" title="Minimizar">&#8211;</button>
+          <button class="tb-btn" data-action="max" title="Maximizar">&#9633;</button>
+          <button class="tb-btn tb-close" data-action="close" title="Fechar">&#10005;</button>
+        </span>
+      </header>
+      <div class="win-body">
+        <h2 class="panel-title reveal">Fale comigo</h2>
+        <p class="muted reveal">Preencha o formulário e eu respondo o quanto antes.</p>
+        <form id="contact-form" class="reveal" novalidate>
+          <label>Nome
+            <input type="text" id="nome" name="nome" placeholder="Seu nome completo" autocomplete="name" />
+            <small class="err" data-for="nome"></small>
+          </label>
+          <label>Telefone
+            <input type="tel" id="telefone" name="telefone" placeholder="(00) 00000-0000" inputmode="numeric" maxlength="15" />
+            <small class="err" data-for="telefone"></small>
+          </label>
+          <label>E-mail
+            <input type="email" id="email" name="email" placeholder="voce@exemplo.com" autocomplete="email" />
+            <small class="err" data-for="email"></small>
+          </label>
+          <label>Mensagem
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva sua mensagem..." maxlength="500"></textarea>
+            <small class="count"><span id="msg-count">0</span>/500</small>
+            <small class="err" data-for="mensagem"></small>
+          </label>
+          <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+        </form>
+        <footer class="win-footer">
+          <span>✉ <a href="mailto:rafa.dfmachado@gmail.com">rafa.dfmachado@gmail.com</a></span>
+          <span>📞 (31) 99356-0045</span>
+          <a href="https://github.com/Rafascia" target="_blank" rel="noopener">GitHub</a>
+        </footer>
+      </div>
+    </section>
+
+    <!-- PROMPT DE COMANDO -->
+    <section class="window hidden" id="win-cmd" data-win="cmd" style="--x:200px; --y:70px;">
+      <header class="titlebar titlebar-cmd">
+        <span class="tb-title"><span class="ico ico-cmd"></span> Prompt de Comando</span>
+        <span class="tb-buttons">
+          <button class="tb-btn" data-action="min" title="Minimizar">&#8211;</button>
+          <button class="tb-btn" data-action="max" title="Maximizar">&#9633;</button>
+          <button class="tb-btn tb-close" data-action="close" title="Fechar">&#10005;</button>
+        </span>
+      </header>
+      <div class="win-body cmd-body" id="cmd-body">
+        <div id="cmd-output" class="cmd-output"></div>
+        <div class="cmd-input-line">
+          <span class="cmd-prompt">C:\Rafael&gt;</span>
+          <input type="text" id="cmd-input" class="cmd-input" autocomplete="off" spellcheck="false" aria-label="Linha de comando" />
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== MENU INICIAR ===================== -->
+  <div id="start-menu" class="start-menu hidden" aria-label="Menu Iniciar">
+    <div class="start-left">
+      <ul class="start-list">
+        <li><button id="menu-logon"><span class="ico ico-user"></span> <span>Trocar usuário</span></button></li>
+        <li><button data-open="sobre"><span class="ico ico-note"></span> <span>Sobre mim</span></button></li>
+        <li><button data-open="habilidades"><span class="ico ico-gear"></span> <span>Habilidades</span></button></li>
+        <li><button data-open="projetos"><span class="ico ico-folder"></span> <span>Projetos</span></button></li>
+        <li><button data-open="contato"><span class="ico ico-mail"></span> <span>Contato</span></button></li>
+        <li><button data-open="cmd"><span class="ico ico-cmd"></span> <span>Prompt de Comando</span></button></li>
+      </ul>
+      <div class="start-sep"></div>
+      <ul class="start-list">
+        <li><a href="https://github.com/Rafascia" target="_blank" rel="noopener"><span class="ico ico-git"></span> <span>Meu GitHub</span></a></li>
+      </ul>
+      <button class="start-allprog" data-open="sobre">Todos os tópicos</button>
+    </div>
+    <div class="start-right">
+      <div class="start-user">
+        <span class="start-avatar">RF</span>
+        <strong>Rafael De Filippo Machado</strong>
+      </div>
+      <button data-open="sobre">Sobre mim</button>
+      <button data-open="projetos">Projetos</button>
+      <button data-open="habilidades">Painel de Controle</button>
+      <button data-open="contato">Contato</button>
+      <div class="start-sep"></div>
+      <button id="start-theme">Alternar tema</button>
+      <button class="start-shutdown" id="start-shutdown">Desligar</button>
+    </div>
+  </div>
+
+  <!-- ===================== BARRA DE TAREFAS ===================== -->
+  <nav class="taskbar" aria-label="Barra de tarefas">
+    <button id="start-btn" class="start-btn" aria-haspopup="true" aria-expanded="false" title="Iniciar">
+      <span class="orb"></span>
+    </button>
+    <ul class="task-items" id="task-items" aria-label="Janelas abertas"></ul>
+    <div class="tray">
+      <button id="sound-toggle" class="tray-btn" title="Ativar/desativar som" aria-label="Som">
+        <span class="sound-ico">🔊</span>
+      </button>
+      <button id="theme-toggle" class="tray-btn" title="Modo claro/escuro" aria-label="Alternar tema">
+        <span class="theme-ico">🌙</span>
+      </button>
+      <div class="tray-clock">
+        <span id="clock-time">00:00</span>
+        <span id="clock-date">00/00/0000</span>
+      </div>
+    </div>
+    <button id="show-desktop" class="show-desktop" title="Mostrar área de trabalho" aria-label="Mostrar área de trabalho"></button>
+  </nav>
+
+  <!-- ===================== MODAL ===================== -->
+  <div id="modal-overlay" class="modal-overlay hidden">
+    <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title">
+      <header class="dialog-bar">
+        <span id="dialog-title">Mensagem</span>
+        <button class="tb-btn tb-close" id="dialog-x" title="Fechar">&#10005;</button>
+      </header>
+      <div class="dialog-body">
+        <span class="dialog-icon" id="dialog-icon">i</span>
+        <p id="dialog-text">Texto da mensagem.</p>
+      </div>
+      <div class="dialog-actions">
+        <button class="btn btn-primary" id="dialog-ok">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
