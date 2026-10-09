@@ -411,7 +411,7 @@ html[data-theme="dark"] .btn { background: linear-gradient(180deg, #26384f, #1a2
 .start-btn:hover { filter: brightness(1.15); }
 .start-btn .orb {
   width: 34px; height: 34px;
-  background: url("WindowsBtn 1.png") center / contain no-repeat;
+  background: url("windows-btn.png") center / contain no-repeat;
   filter: drop-shadow(0 0 6px rgba(140, 210, 255, 0.8));
 }
 
@@ -490,8 +490,8 @@ html[data-theme="dark"] .btn { background: linear-gradient(180deg, #26384f, #1a2
   background-repeat: no-repeat; background-size: contain;
   border-radius: 0; box-shadow: none;
 }
-.ico-folder { background-image: url("pasta_button 1.png"); }
-.ico-bin    { background-image: url("pasta_button 1.png"); }
+.ico-folder { background-image: url("pasta.png"); }
+.ico-bin    { background-image: url("pasta.png"); }
 .ico-git    { background-image: url("Github.png"); }
 .ico-ie     { background-image: url("InternetExplorer.png"); }
 
