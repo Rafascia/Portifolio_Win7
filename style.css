@@ -245,8 +245,9 @@ body {
 @keyframes win-minimize {
   to { opacity: 0; transform: scale(0.2) translateY(90vh); }
 }
-/* janela minimizada: fica fora de vista, mas continua na barra de tarefas */
-.window.minimized { display: none; }
+/* janela minimizada: fica fora de vista, mas continua na barra de tarefas
+   (!important para vencer .resized/.maximized que também definem display) */
+.window.minimized { display: none !important; }
 
 /* pegadores de redimensionamento (como nas bordas das janelas do Windows) */
 .resize-handle { position: absolute; z-index: 10; }
